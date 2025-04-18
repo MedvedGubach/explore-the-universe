@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client";
 
 export const GET_NIVL = gql`
-query GetNivl($query: String){
+query GetNivl($query: String!){
     nivl(query: $query){
-    description
-    nasa_id
-    preview_url
-    title
+      title
+      description
+      nasa_id
+      preview_url
     }
 }
 `;
@@ -18,4 +18,4 @@ query GetNivlAsset($nasa_id: String!){
     files
    }
 }
-`
+` 

@@ -1,5 +1,9 @@
 import { Fragment } from 'react'
-import logo from '../assets/CosmicAtlasLogo.webp'
+import logo from '../assets/uiImages/CosmicAtlasLogo.webp'
+import GlitchText from './GlitchText';
+import { Link } from "react-router-dom";
+
+
 const Navbar = () => {
     return (
         <Fragment>
@@ -9,8 +13,12 @@ const Navbar = () => {
                 </div>
 
                 <div className="hidden sm:flex sm:space-x-12">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
+                    <Link to="/" className="inline-block  text-black font-semibold py-2 px-6 rounded-xl ">
+                        <GlitchText text="Home" className="text-2xl text-white hover:text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.6)]" />
+                    </Link>
+                    <Link to="/" className="inline-block  text-black font-semibold py-2 px-6 rounded-xl ">
+                        <GlitchText text="About" className="text-2xl text-white hover:text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.6)]" />
+                    </Link>
                 </div>
             </div>
         </Fragment>

@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Overview from './pages/Overview';
 import Library from './pages/Library';
+import LibraryRoute from './pages/LibraryRoute';
 import './App.css'
 
 function App() {
@@ -55,7 +56,6 @@ function App() {
       <BrowserRouter>
         <Fragment>
           <div className=" text-white antialiased selection:bg-cyan-300 selection:text-cyan-900">
-
             {/* Starry background with astronomical object images */}
             <div className="fixed top-0 left-0 -z-10 w-full h-full">
               <div className="starry-bg">
@@ -109,6 +109,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Fragment><Home /><Overview /></Fragment>} />
                   <Route path="/Library" element={<Library />} />
+                  <Route path="/library/:nasa_id" element={<LibraryRoute />} />
                 </Routes>
               </div>
             </div>

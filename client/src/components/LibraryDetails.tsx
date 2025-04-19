@@ -1,6 +1,8 @@
 import { Fragment } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_NIVL } from '../graphql/queries/nivlClient';
+import { Link } from "react-router-dom";
+import GlitchText from './GlitchText';
 
 const LibraryDetails = ({ query }: { query: string }) => {
 
@@ -26,15 +28,18 @@ const LibraryDetails = ({ query }: { query: string }) => {
                         <div className="mt-auto">
                             <hr className="border-cyan-700 mx-4" />
                             <div className="p-4 text-center">
-                                <a href={item.description} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-200 font-orbitron underline">
-                                    View Details
-                                </a>
+                                <Link to={`/library/${item.nasa_id}`} state={{
+                                    title: item.title, description: item.description, preview_url: item.preview_url,
+                                    nasa_id: item.nasa_id,
+                                }}>
+                                    <GlitchText text="View Details" className="text-2xl text-white hover:text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.6)]" />
+                                </Link>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-        </Fragment>
+        </Fragment >
     );
 };
 

@@ -9,10 +9,9 @@ const ImageAndVideoCard = () => {
             <div className="pb-4">
                 <h1 className='drop-shadow-[0_0_20px_rgba(0,255,255,0.6)] mt-6 font-orbitron text-4xl'>Image and Video Library</h1>
                 <div className="flex flex-wrap">
-
                     <div className="w-full lg:w-1/2">
                         <div className="flex flex-col items-center mt-12">
-                            <img src={nivlImage} alt="nivlImage1" />
+                            <img src={nivlImage} width={351} height={247} alt="nivlImage1" className="ml-6 ring-1 rounded-xl drop-shadow-[0_0_10px_rgba(0,255,255,0.6)]" />
                         </div>
                     </div>
 

@@ -1,9 +1,26 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import GlitchText from '../components/GlitchText';
 import blackHoleVideo from '../assets/videos/BlackHoleBackground.webm';
 import fallBackVideo from '../assets/videos/BlackHoleBackground.mp4';
-
+import { Link } from 'react-router-dom';
 const Home = () => {
+
+
+    const fetchPlanets = async () => {
+        try {
+            const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/');
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+        fetchPlanets();
+    }, [])
+
+
     return (
         <Fragment>
             <section id="home" className="relative z-10 border-b-2">
@@ -22,10 +39,14 @@ const Home = () => {
                                     in outer space by means of continuously evolving and growing space technology.
                                 </p>
                             </article>
-                            <GlitchText
-                                text="Enter the wormhole"
-                                className="text-2xl text-white hover:text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.6)]"
-                            />
+
+                            <Link to={'/Solar-System'}>
+                                <GlitchText
+                                    text="Enter the wormhole"
+                                    className="text-2xl text-white hover:text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.6)]"
+                                />
+                            </Link>
+
                         </div>
                     </div>
                 </div>

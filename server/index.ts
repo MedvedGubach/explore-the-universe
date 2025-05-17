@@ -15,12 +15,10 @@ async function startServer() {
 
     const PORT = process.env.PORT || 4000;
 
-    // Guardamos la instancia del servidor HTTP
     const httpServer = app.listen(PORT, () => {
         console.log(`🚀 GraphQL server ready at http://localhost:${PORT}${server.graphqlPath}`);
     });
 
-    // ⛔ Captura Ctrl+C o señales de cierre
     process.on('SIGINT', () => {
         console.log('\n🛑 Server shutting down (SIGINT)...');
         httpServer.close(() => {

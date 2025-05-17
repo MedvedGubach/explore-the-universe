@@ -11,7 +11,6 @@ const Apod = () => {
 
     if (loading) return <p>Loading</p>
     if (error) return <p>Something went wrong {error.message} </p>
-    console.log(data.apod);
     return (
         <Fragment>
             <div className="pb-4">

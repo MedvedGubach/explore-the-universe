@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Input, Button } from '@headlessui/react'
-import LibraryDetails from '../components/LibraryDetails';
+import LibraryCards from '../components/LibraryCards';
 
 
 const Library = () => {
@@ -24,7 +24,7 @@ const Library = () => {
                 </div>
 
                 <div>
-                    <LibraryDetails query={submitSearch} />
+                    <LibraryCards query={submitSearch} />
                 </div>
             </div>
         </Fragment>
